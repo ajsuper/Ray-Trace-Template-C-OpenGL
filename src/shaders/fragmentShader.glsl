@@ -23,7 +23,7 @@ vec3 rayStartDirection(vec2 uv, vec2 res, vec3 cameraPosition, vec3 cameraDirect
     float aspectRatio = res.x / res.y;
     float scale = tan(radians(fov * 0.5));
     vec2 pixelNDC = vec2(
-        (uv.x * scale) * aspectRatio, // Apply aspect ratio to x-coordinate
+        (-uv.x * scale) * aspectRatio, // Apply aspect ratio to x-coordinate
         uv.y * scale
     );
     vec3 targetPosition = cameraPosition + cameraDirection;
